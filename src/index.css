@@ -4,5 +4,24 @@
 
 html,
 body {
-  background-color: #ccc;
+  background-color: #ff7c43;
+  color: white;
+  margin: 0;
+  padding: 2em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  border: none;
+  border-radius: 0.7em;
+  padding: 1em;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
 }
