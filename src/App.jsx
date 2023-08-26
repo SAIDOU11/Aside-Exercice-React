@@ -1,19 +1,14 @@
-import { useState } from 'react';
-import WindowTracker from './WindowTracker.jsx';
+import { useEffect, useState } from 'react';
 
 const App = () => {
-  const [show, setShow] = useState(true);
-
-  const toggleShow = () => {
-    setShow((prevState) => !prevState);
-  };
-
-  return (
-    <div className="container">
-      <button onClick={toggleShow}>Toggle WindowTracker </button>
-      {show && <WindowTracker />}
-    </div>
+  const [notes, setNotes] = useState(
+    () => JSON.parse(localStorage.getItem('notes')) || []
   );
+
+  useEffect(() => {
+    setNotes(localStorage.setItem('notes', JSON.stringify(notes)));
+  }, [notes]);
+  return <h1>App</h1>;
 };
 
 export default App;
