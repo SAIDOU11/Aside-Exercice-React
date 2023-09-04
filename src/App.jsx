@@ -1,13 +1,18 @@
 import Header from './components/Header.jsx';
 import Button from './components/Button.jsx';
+import { createContext } from 'react';
+
+const ThemeContext = createContext();
 
 const App = () => {
   return (
-    <div className="container dark-theme">
-      <Header />
-      <Button />
-    </div>
+    <ThemeContext.Provider value="light">
+      <div className="container dark-theme">
+        <Header />
+        <Button />
+      </div>
+    </ThemeContext.Provider>
   );
 };
 
-export default App;
+export { App, ThemeContext };
