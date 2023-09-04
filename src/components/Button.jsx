@@ -2,8 +2,12 @@ import { ThemeContext } from '../App.jsx';
 import { useContext } from 'react';
 
 const Button = () => {
-  const value = useContext(ThemeContext);
-  return <button className={`${value}-theme`}>Switch Theme</button>;
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  return (
+    <button onClick={toggleTheme} className={`${theme}-theme`}>
+      Switch Theme
+    </button>
+  );
 };
 
 export default Button;
