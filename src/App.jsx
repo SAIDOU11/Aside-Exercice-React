@@ -1,14 +1,13 @@
-import { useEffect, useState } from 'react';
+import Header from './components/Header.jsx';
+import Button from './components/Button.jsx';
 
 const App = () => {
-  const [notes, setNotes] = useState(
-    () => JSON.parse(localStorage.getItem('notes')) || []
+  return (
+    <div className="container dark-theme">
+      <Header />
+      <Button />
+    </div>
   );
-
-  useEffect(() => {
-    setNotes(localStorage.setItem('notes', JSON.stringify(notes)));
-  }, [notes]);
-  return <h1>App</h1>;
 };
 
 export default App;
